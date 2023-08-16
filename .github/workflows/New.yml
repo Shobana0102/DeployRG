@@ -45,6 +45,9 @@ jobs:
      steps:
      - name: Checkout repository
        uses: actions/checkout@v2
+     - name: Create Output Directory
+       run: |
+          mkdir -p ${{ github.workspace }}/Source/DeployRG/jsonFilesForScan
 
      - name: Set up Azure CLI
        uses: azure/login@v1
