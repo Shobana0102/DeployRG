@@ -37,7 +37,7 @@ jobs:
           creds: ${{ secrets.MY_SECRET }}
 
       - name: Run Bicep Linter
-      #   working-directory: '${{github.workspace}}/Source/DeployRG'
+       # working-directory: '${{github.workspace}}/Source/DeployRG'
         run: |
          az bicep build --file Source/DeployRG/ResGrp.bicep
 
@@ -61,11 +61,11 @@ jobs:
 
       - name: Run preflight validation
         with:
-         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-         template: ./Source/DeployRG/ResGrp.bicep
-         deploymentMode: Validate
+         # resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
+         # template: ./Source/DeployRG/ResGrp.bicep
+         # deploymentMode: Validate
 
-          # az deployment group validate --name Deploy1 --template-file ./ResourceGroup.Bicep --parameters ./ResGrp.json
+           az deployment group validate --name Deploy1 --template-file ./ResourceGroup.Bicep --parameters ./ResGrp.json
   
   
   # This workflow contains a single job called "Preview"
