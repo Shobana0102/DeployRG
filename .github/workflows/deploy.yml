@@ -29,7 +29,7 @@ jobs:
 
       - name: Create Output Directory
         run: |
-          mkdir -p ${{ github.workspace }}/Source/DeployRG
+          mkdir -p ${{ github.workspace }}/Source/DeployRG/jsonfile
 
       - name: Azure-Login
         uses: azure/login@v1
@@ -40,7 +40,7 @@ jobs:
         working-directory: '${{github.workspace}}/Source/DeployRG'
         run: |
 
-          az bicep build --file ./ResGrp.bicep  --outdir ./jsonfile
+          az bicep build --file Source/DeployRG/ResGrp.bicep  --outdir ./jsonfile
           ls ./jsonFile
 
 
