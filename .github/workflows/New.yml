@@ -60,6 +60,7 @@ jobs:
        run: |
         az deployment group validate \
           --resource-group 2154941-RG \
+          --location Canada-central
           --template-file Source/DeployRG/ResGrp.json
           
      # - name: Create Resource Group
