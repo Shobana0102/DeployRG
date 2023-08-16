@@ -14,19 +14,22 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
  
-  lint:
+jobs:
+  Lint:
+    name: Run linters
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Azure-Login
-      uses: azure/login@v1
-      with:
-          creds: ${{ secrets.MY_SECRET }}
-    - run: |
-        az bicep build --file Source/DeployRG/ResGrp.bicep
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      # Install your linters here
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+         eslint: true.
 
 
   # This workflow contains a single job called "Validate"
