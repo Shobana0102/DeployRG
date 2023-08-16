@@ -40,7 +40,7 @@ jobs:
         working-directory: '${{github.workspace}}/Source/DeployRG'
         run: |
 
-          az bicep build --file ./p  --outdir ./jsonfile
+          az bicep build --file ./ResGrp.bicep  --outdir ./jsonfile
           ls ./jsonFile
 
 
