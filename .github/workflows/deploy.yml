@@ -37,7 +37,7 @@ jobs:
           creds: ${{ secrets.MY_SECRET }}
 
       - name: Run Bicep Linter
-        working-directory: '${{github.workspace}}/Source/DeployRG'
+        # working-directory: '${{github.workspace}}/Source/DeployRG'
         run: |
          az bicep build --file Source/DeployRG/ResGrp.bicep
 
