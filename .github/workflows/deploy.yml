@@ -26,7 +26,7 @@ jobs:
       with:
           creds: ${{ secrets.MY_SECRET }}
     - run: |
-        az bicep build --file Source/DeployRG/.bicep
+        az bicep build --file Source/DeployRG/ResGrp.bicep
 
 
   # This workflow contains a single job called "Validate"
