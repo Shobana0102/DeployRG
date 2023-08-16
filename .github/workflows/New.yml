@@ -53,7 +53,7 @@ jobs:
       - name: Run Template Validation
         working-directory: '${{github.workspace}}/Source/DeployRG'
         run: |
-          az deployment group validate --name mydeployment1 --template-file ./ResGrp.bicep --parameters ./ResGrp.json
+          az deployment group validate --name mydeployment1 --resource-group 2154941RG --template-file ./ResGrp.bicep --parameters ./ResGrp.json
 
  
 
